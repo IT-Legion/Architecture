@@ -7,6 +7,7 @@ TEXT_SAVE_PATH = os.getenv("TEXT_SAVE_PATH", "texts")
 os.makedirs(TEXT_SAVE_PATH, exist_ok=True)
 
 @bot.message_handler(content_types=['document'])
+@log_usage
 def handle_document(message: Message):
     document = message.document
 
