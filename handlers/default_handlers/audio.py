@@ -7,6 +7,7 @@ AUDIO_SAVE_PATH = os.getenv("AUDIO_SAVE_PATH", "audios")
 os.makedirs(AUDIO_SAVE_PATH, exist_ok=True)
 
 @bot.message_handler(content_types=['voice', 'audio'])
+@log_usage
 def handle_audio(message: Message):
     # Определяем тип сообщения (аудио или голосовое сообщение)
     if message.voice:
