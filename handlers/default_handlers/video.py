@@ -1,6 +1,7 @@
 from telebot.types import Message
 from loader import bot
 import os
+from utils.logger import log_usage
 
 # Получаем путь для сохранения видео из переменных окружения
 VIDEO_SAVE_PATH = os.getenv("VIDEO_SAVE_PATH", "videos")
