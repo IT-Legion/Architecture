@@ -11,6 +11,7 @@ os.makedirs(VIDEO_SAVE_PATH, exist_ok=True)
 MAX_FILE_SIZE = 20 * 1024 * 1024  # 20 MB
 
 @bot.message_handler(content_types=["video", "video_note"])
+@log_usage
 def handle_video(message: Message):
     if message.content_type == "video_note":
         video = message.video_note
@@ -31,6 +32,7 @@ def handle_video(message: Message):
     bot.reply_to(message, f"Видео сохранено как {video.file_id}.mp4")
 
 @bot.message_handler(content_types=["document"])
+@log_usage
 def handle_document(message: Message):
     document = message.document
     file_extension = os.path.splitext(document.file_name)[1].lower()
