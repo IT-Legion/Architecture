@@ -1,6 +1,7 @@
 import os
 from telebot.types import Message
 from loader import bot
+from utils.logger import log_usage
 
 # Получаем путь для сохранения текстовых файлов из переменных окружения
 TEXT_SAVE_PATH = os.getenv("TEXT_SAVE_PATH", "texts")
