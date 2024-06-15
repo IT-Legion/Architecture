@@ -1,6 +1,7 @@
 import os
 from telebot.types import Message
 from loader import bot
+from utils.logger import log_usage
 
 # Получаем путь для сохранения аудио из переменных окружения
 AUDIO_SAVE_PATH = os.getenv("AUDIO_SAVE_PATH", "audios")
