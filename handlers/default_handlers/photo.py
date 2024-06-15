@@ -6,6 +6,7 @@ PHOTO_SAVE_PATH = os.getenv("PHOTO_SAVE_PATH", "photos")
 os.makedirs(PHOTO_SAVE_PATH, exist_ok=True)
 
 @bot.message_handler(content_types=["photo"])
+@log_usage
 def handle_photo(message: Message):
     photo = message.photo[-1]  # Получаем фото с максимальным разрешением
     file_info = bot.get_file(photo.file_id)
@@ -18,6 +19,7 @@ def handle_photo(message: Message):
     bot.reply_to(message, f"Фото сохранено как {photo.file_id}.jpg")
 
 @bot.message_handler(content_types=["document"])
+@log_usage
 def handle_document(message: Message):
     document = message.document
     file_info = bot.get_file(document.file_id)
