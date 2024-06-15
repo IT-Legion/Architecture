@@ -1,6 +1,7 @@
 from telebot.types import Message
 
 from loader import bot
+from utils.logger import log_usage
 
 
 @bot.message_handler(commands=["start"])
